@@ -1,3 +1,11 @@
+/**
+ * 
+ * Code implementation
+ * @Author Ananth Gunasekarapandiyan
+ * @Email ananth1626p@gmail.com
+ * 
+ */
+
 import React from 'react';
 import DefaultImage from '../../img/default_image.png';
 
@@ -29,6 +37,7 @@ const Science = ({ newsData, page, rowsPerPage, selected, toggle, timeConversion
                                             </div>
                                         </div>
                                         <p className="news_description">{news_info.abstract}</p>
+                                        <p className="mt-2"><a href={`${news_info}`} rel="noreferr">Read More...</a></p>
                                         <div className='comments'>
                                         <h6>Comments:</h6>
                                             {articleComments.length > 0 ? 

@@ -1,3 +1,11 @@
+/**
+ * 
+ * Code implementation
+ * @Author Ananth Gunasekarapandiyan
+ * @Email ananth1626p@gmail.com
+ * 
+ */
+
 import axios from "axios";
 import authHeader from "./auth-header";
 
@@ -43,8 +51,10 @@ const getReaderComments = (comment_url) => {
   })
 };
 
-export default {
+const exportData = {
   getTopStories,
   getSearchArticles,
   getReaderComments
-};
+}
+
+export default exportData;

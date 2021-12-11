@@ -1,3 +1,11 @@
+/**
+ * 
+ * Code implementation
+ * @Author Ananth Gunasekarapandiyan
+ * @Email ananth1626p@gmail.com
+ * 
+ */
+
 import React, { PureComponent} from 'react';
 import styled from "tachyons-components";
 import ReactLoading from "react-loading";

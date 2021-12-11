@@ -1,3 +1,11 @@
+/**
+ * 
+ * Code implementation
+ * @Author Ananth Gunasekarapandiyan
+ * @Email ananth1626p@gmail.com
+ * 
+ */
+
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
@@ -65,8 +73,8 @@ const News = (props) => {
   const handleTopStories = async() => {
     if(searchArticle === null || searchArticle === ''){
       const responseTopStories = await NewsService.getTopStories(value)
+      console.log('responseTopStories', responseTopStories);
       props.getTopStoriesData(responseTopStories)
-      // setNewData(responseTopStories.data.results)
       setLoading(false)
     }else {
       const responseSearchArticles = await NewsService.getSearchArticles(value, searchArticle)
@@ -80,7 +88,7 @@ const News = (props) => {
       handleTopStories()
     }
     fetchData();
-  },[value, searchArticle, selected])
+  }, [value, searchArticle, selected])
 
   const timeConversion = (date) => {
     const publishedAt = new Date(date);

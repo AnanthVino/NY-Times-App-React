@@ -1,3 +1,11 @@
+/**
+ * 
+ * Code implementation
+ * @Author Ananth Gunasekarapandiyan
+ * @Email ananth1626p@gmail.com
+ * 
+ */
+
 import axios from "axios";
 
 const API_URL = "http://localhost:8000/auth/";
@@ -30,8 +38,10 @@ const logout = () => {
   return localStorage.removeItem("token");
 };
 
-export default {
+const exportData = {
   register,
   login,
   logout
 };
+
+export default exportData;

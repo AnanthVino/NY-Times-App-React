@@ -1,3 +1,12 @@
+/**
+ * 
+ * Code implementation
+ * @Author Ananth Gunasekarapandiyan
+ * @Email ananth1626p@gmail.com
+ * 
+ */
+
+
 import React, { useState } from "react";
 import './register.scss';
 import AuthService from "../../services/auth-service";

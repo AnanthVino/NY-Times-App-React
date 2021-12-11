@@ -1,3 +1,11 @@
+/**
+ * 
+ * Code implementation
+ * @Author Ananth Gunasekarapandiyan
+ * @Email ananth1626p@gmail.com
+ * 
+ */
+
 import React, { useState } from 'react';
 import './searchArticle.scss';
 
@@ -13,14 +21,16 @@ const SearchArticles = (props) => {
   };
 
   const handleSubmit = (e) => {
-    if(e.target.value !== ''){
-      if(list.length > 4){
-        list.shift()
+    if (e.key === 'Enter') {
+      if(e.target.value !== ''){
+        if(list.length > 4){
+          list.shift()
+        }
+        list.push({name: e.target.value})
       }
-      list.push({name: e.target.value})
+      props.searchArticles(searchValue)
+      setVisible(false)
     }
-    props.searchArticles(searchValue)
-    setVisible(false)
   }
 
   const selectItem = (e,name) => {
@@ -38,7 +48,7 @@ const SearchArticles = (props) => {
           placeholder="Search article"
           value={searchValue} 
           onChange={(e) => handleChange(e)}
-          onBlur={(e) => handleSubmit(e)}
+          onKeyPress={(e) => handleSubmit(e)}
           onFocus={() => { setVisible(true)} }
         />
       </div>
