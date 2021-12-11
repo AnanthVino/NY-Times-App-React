@@ -67,6 +67,7 @@ const News = (props) => {
     if(searchArticle === null || searchArticle === ''){
       const responseTopStories = await NewsService.getTopStories(value)
       props.getTopStoriesData(responseTopStories)
+      setNewData(responseTopStories.data.results)
       setLoading(false)
     }else {
       const responseSearchArticles = await NewsService.getSearchArticles(value, searchArticle)
