@@ -19,7 +19,7 @@ const getTopStories = (value) => {
 
 const getSearchArticles = (value, searchArticle) => {
   return axios
-    .get(`${API_URL}search/v2/articlesearch.json?fq=section_name:${value}&q=${searchArticle}&sort=newest&api-key=${API_KEY}`, {
+    .get(`${API_URL}search/v2/articlesearch.json?&q=${searchArticle}&fq=news_desk:(${value})&sort=newest&api-key=${API_KEY}`, {
       header : authHeader()
     })
     .then((response) => {

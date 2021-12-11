@@ -18,7 +18,6 @@ import { getTopStoriesData, getSearchStoriesData, getReaderCommentsData } from "
 
 const News = (props) => {
   const [value, setValue] = useState('world');
-  const [newsData, setNewData] = useState(props.top_stories? props.top_stories : []);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [selected, setSelected] = useState(null);
@@ -67,7 +66,7 @@ const News = (props) => {
     if(searchArticle === null || searchArticle === ''){
       const responseTopStories = await NewsService.getTopStories(value)
       props.getTopStoriesData(responseTopStories)
-      setNewData(responseTopStories.data.results)
+      // setNewData(responseTopStories.data.results)
       setLoading(false)
     }else {
       const responseSearchArticles = await NewsService.getSearchArticles(value, searchArticle)
@@ -81,7 +80,7 @@ const News = (props) => {
       handleTopStories()
     }
     fetchData();
-  },[value, newsData, searchArticle, selected])
+  },[value, searchArticle, selected])
 
   const timeConversion = (date) => {
     const publishedAt = new Date(date);
